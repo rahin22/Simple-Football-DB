@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>Football Stats</title>
+</head>
+
+<body>
+
+    <div id="scrollTop" onclick='scrollToTop()'>
+        <i class="ri-arrow-up-line"></i>
+    </div>
+
+
+    <div class="home" id="home">
+        <nav>
+            <div class="nav-logo" onclick="homeRedir()">
+                <i class="ri-football-fill"></i>
+                <h2 id="Football Stats">FootballDB</h2>
+            </div>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li>
+                        <a href="/#home">Home</a>
+                    </li>
+                    <li>
+                        <a href="/#leagues">Leagues</a>
+                    </li>
+                    <li>
+                        <a href="/#teamheader">Teams</a>
+                    </li>
+                    <li>
+                        <a href="/fulldb">Match DB(A-Z)</a>
+                    </li>
+                    <li id="search-container">
+                        <form id="search-form" action="/fulldb" method="GET">
+                            <i class="ri-search-2-line" onmouseover="showSearch()"></i>
+                            <input id="searchbar" type="text" name="query" placeholder="Search.."
+                                onmouseleave="hideSearch()" onkeydown="searchOnEnter(event)">
+                        </form>
+                    </li>
+
+
+                </ul>
+            </div>
+        </nav>
+
+        <div class="main">
+            <div class="content">
+                <h2 id="title">Everything<br><span>Football</span></h2>
+                <p>Everything Football all in one place</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="leagues" id="leagues">
+
+        <h2>Leagues</h2>
+
+        <div class="card-container">
+            <div class="card prem" data-inViewport="slideLeft">
+                <img src="https://static.vecteezy.com/system/resources/previews/010/994/451/non_2x/premier-league-logo-symbol-with-name-design-england-football-european-countries-football-teams-illustration-with-purple-background-free-vector.jpg"
+                    alt="">
+                <div class="card-content">
+                    <p>Discover Premier League intensity: elite clubs, relentless competition, pure football passion.</p>
+                    <a href="/EnglishPremierLeague" class="button"> Find out more <span
+                            class="material-symbols-outlined">arrow_right_alt</span></a>
+                </div>
+            </div>
+
+            <div class="card deutsche" data-inViewport="slideRight">
+                <img src="https://logowik.com/content/uploads/images/539_bundes_liga_logo.jpg" alt="">
+                <div class="card-content">
+                    <p>Bundesliga brilliance: from Bayern to Dortmund, pure football magic.</p>
+                    <a href="/DeutscheBundesliga" class="button"> Find out more <span
+                            class="material-symbols-outlined">arrow_right_alt</span></a>
+                </div>
+            </div>
+
+            <div class="card serie" data-inViewport="slideTop">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Serie_A_logo_2022.svg" alt="">
+                <div class="card-content">
+                    <p>Indulge in Serie A excellence: Italy's football heritage, Juventus dominance, thrilling showdowns.</p>
+                    <a href="/SerieA" class="button"> Find out more <span
+                            class="material-symbols-outlined">arrow_right_alt</span></a>
+                </div>
+            </div>
+
+            <div class="card laliga" data-inViewport="slideRight">
+                <img src="https://www.thesun.co.uk/wp-content/uploads/2023/06/la-liga-logo-822870770-1.jpg" alt="">
+                <div class="card-content">
+                    <p>Immerse in La Liga allure: Spanish football passion, Real Madrid spectacle, Barcelona brilliance.</p>
+                    <a href="/LaLiga" class="button"> Find out more <span
+                        class="material-symbols-outlined">arrow_right_alt</span></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <h2 id="teamheader">Teams</h2>
+
+    <div class="teams" data-inViewport="slideLeft">
+
+        <div class="swiper-container">
+            <div class="swiper mySwiper" data-inViewport="slideTop">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <h3 class="info"></h3>
+                        <div class="imgcont">
+                            <img src="https://static.independent.co.uk/2023/08/26/16/1640348690.jpg">
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <h3 class="info"></h3>
+                        <div class="imgcont">
+                            <img src="https://i.eurosport.com/2023/05/13/3703683-75363588-2560-1440.jpg">
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <h3 class="info"></h3>
+                        <div class="imgcont">
+                            <img
+                                src="https://static01.nyt.com/images/2022/08/31/multimedia/31soccer-acmilan-top/31soccer-acmilan-top-superJumbo.jpg">
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <h3 class="info"></h3>
+                        <div class="imgcont">
+                            <img src="https://images.wsj.net/im-553881">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        </div>
+
+        <div class="teamcontent">
+            <h2>The Best Clubs in The World</h2>
+            <p>Find these teams and many more from the best leagues around the world. See all the stats,games & fixtures of your favourite team. Click the button below to explore our full database of the best clubs and know the whole story.</p>
+            <button class="explrbutton" onclick="fulldbRedir()">Explore More</button>
+        </div>
+
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+
+</html>

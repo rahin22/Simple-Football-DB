@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>Football Full Database</title>
+</head>
+
+<body>
+    <div id="scrollTop" onclick='scrollToTop()'>
+        <i class="ri-arrow-up-line"></i>
+    </div>
+
+    <div class="navcontainer">
+        <nav>
+            <div class="nav-logo" onclick="homeRedir()">
+                <i class="ri-football-fill"></i>
+                <h2 id="Football Stats">FootballDB</h2>
+            </div>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li>
+                        <a href="/#home">Home</a>
+                    </li>
+                    <li>
+                        <a href="/#leagues">Leagues</a>
+                    </li>
+                    <li>
+                        <a href="/#teamheader">Teams</a>
+                    </li>
+                    <li>
+                        <a href="/fulldb">Match DB(A-Z)</a>
+                    </li>
+                    <li id="search-container">
+                        <form id="search-form" action="/fulldb" method="GET">
+                            <i class="ri-search-2-line" onmouseover="showSearch()"></i>
+                            <input id="searchbar" type="text" name="query" placeholder="Search.."
+                                onmouseleave="hideSearch()">
+                        </form>
+                    </li>
+
+
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="dblist">
+        <h1>Full Match Database</h1>
+        <form id="adv-search" action="/fulldb" method="GET" onsubmit="checkFilters(event)">
+            <label for="filterleague">League:</label>
+            <select id="filterleague" name="league">
+                <option value="" selected disabled hidden>Choose a league</option>
+                {%for leagueind in leagues%}
+                <option value="{{leagueind}}">{{leagueind}}</option>
+                {%endfor%}
+            </select>
+            <label for="filterteam">Team:</label>
+            <select id="filterteam" name="team">
+                <option value="" selected disabled hidden>Choose a team</option>
+                {%for teamind in teams%}
+                <option value="{{teamind}}">{{teamind}}</option>
+                {%endfor%}
+            </select>
+            <label for="filteryear">Year:</label>
+            <select id="filteryear" name=year>
+                <option value="" selected disabled hidden>Choose a year</option>
+                {%for yearind in years%}
+                <option value="{{yearind}}">{{yearind}}</option>
+                {%endfor%}
+            </select>
+
+            <div class="datefilter">
+                <label for="start">Start date:</label>
+                <input type="date" id="start" name="startdate" min="2013-08-09" max="2017-05-28" value=""></input>
+                <label for="start">End date:</label>
+                <input type="date" id="end" name="enddate" min="2013-08-09" max="2017-05-28" value=""></input>
+            </div>
+
+            <div class="filterbuttons">
+                <button>Filter</button>
+                <button onclick="removeFilters(event)">Remove Filters</button>
+            </div>
+        </form>
+
+        <div class="appliedfilters">
+            {%if query%}
+            <span>Search Query: {{query.title()}}</span>
+            {%endif%}
+            {%if league%}
+            <span>Filtered League: {{league.title()}}</span>
+            {% endif %}
+            {%if team%}
+            <span>Filtered Team: {{team.title()}}</span>
+            {%endif%}
+            {%if year%}
+            <span>Filtered Season: {{year}}</span>
+            {%endif%}
+            {%if startdate != '2013-01-01'%}
+            <span>Filtered Start Date: {{startdate}}</span>
+            {%endif%}
+            {%if enddate != '2018-01-01'%}
+            <span>Filtered End Date: {{enddate}}</span>
+            {%endif%}
+        </div>
+
+
+
+        <div class="matchtable">
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Division</th>
+                    <th>Home Team</th>
+                    <th>Away Team</th>  
+                    <th>Score</th>
+                    <th>Match Report</th>
+                </tr>
+
+                {%for match in items%}
+                <tr>
+                    <td>{{match.date}}</td>
+                    <td><a href="{{match.divisionurl}}">{{match.division}}</a></td>
+                    <td>{{match.home_team}}</td>
+                    <td>{{match.away_team}}</td>
+                    <td>{{match.home_score}} - {{match.away_score}}</td>
+                    <td><a href="{{match.url}}">View Report</a></td>
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+
+    </div>
+
+    <div class="pages">
+        {{ pagination.info }}
+        {{ pagination.links }}
+        <form id="perpageform" action="/fulldb" method="POST">
+            <label for="perpageselect">Items Per Page:</label>
+            <select id="perpageselect" name="per_page" onchange="submitForm()">
+                <option value="10" {% if per_page==10 %}selected{% endif %}>10</option>
+                <option value="20" {% if per_page==20 %}selected{% endif %}>20</option>
+                <option value="40" {% if per_page==40 %}selected{% endif %}>40</option>
+                <option value="50" {% if per_page==50 %}selected{% endif %}>50</option>
+                <option value="100" {% if per_page==100 %}selected{% endif %}>100</option>
+            </select>
+        </form>
+    </div>
+
+    <section></section>
+
+    <script src="{{url_for('static', filename='main.js')}}"></script>
+</body>
+
+</html>

@@ -1,0 +1,1010 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* Font Sizes */
+    --largest-font: 112px;
+    --larger-font: 70px;
+    --large-font: 34px;
+    --text-large-font: 20px;
+    --text-font: 16px;
+
+    /* Font Colours */
+    --text-color: #000;
+    --hover-color: #fff;
+    --dark-color: #000;
+    --bg-color: #ffff;
+    --nav-hover-color: #4caf50;
+    --secondary-color: #4caf50;
+    --search-bar-color: #ffff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+}
+
+/* Scroll Top Button*/
+
+#scrollTop {
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    transform: translate(90vw, 90vh);
+    cursor: pointer;
+    z-index: 10000;
+    transition: all 0.5s;
+    border-radius: 50%;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#scrollTop i {
+    background: var(--secondary-color);
+    font-size: 1.5em;
+    padding: 8px;
+    border-radius: 50%;
+    color: var(--bg-color);
+    transition: all 0.5s;
+}
+
+#scrollTop i:hover {
+    background-color: var(--hover-color);
+    color: var(--secondary-color);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+/* Scroll Top Button*/
+
+
+
+/* home section */
+
+.home {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.navcontainer nav,
+.home nav {
+    display: flex;
+    position: fixed;
+    justify-content: right;
+    align-items: center;
+    width: 100%;
+    height: 75px;
+    padding-right: 120px;
+    z-index: 10;
+    transition: 0.5s;
+}
+
+.nav-logo {
+    position: absolute;
+    left: 0px;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-logo i {
+    font-size: 1.5em;
+    margin: 1em;
+    color: var(--dark-color);
+}
+
+.nav-logo h2 {
+    font-family: "Poppins";
+    font-size: 20px;
+    padding: 0px;
+    margin: 20px;
+    top: 0;
+    cursor: pointer;
+    left: 40px;
+    color: var(--dark-color);
+    position: absolute;
+
+}
+
+.nav-menu {
+    transition: all 0.5s;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    transition: all 0.5s;
+    transform: translateX(50px);
+}
+
+.nav-menu ul li {
+    margin: 1em 1.5em;
+    font-size: var(--text-large-font);
+    font-family: "Poppins";
+    font-weight: 600;
+    color: var(--dark-color);
+    transition: all 0.5s;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: var(--dark-color);
+    transition: all 0.5s;
+}
+
+.nav-menu ul li a:hover {
+    color: var(--nav-hover-color);
+}
+
+.nav-menu ul li input[type=text] {
+    background: var(--search-bar-color);
+    padding: 6px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    font-size: 17px;
+}
+
+#searchbar {
+    font-family: "Poppins";
+    visibility: hidden;
+    width: 0;
+    transition: visibility 0.5s, width 0.5s;
+}
+
+#searchbar.visible {
+    visibility: visible;
+    width: 300px;
+}
+
+.ri-search-2-line {
+    visibility: visible;
+    transition: 0.5s;
+}
+
+.nav-menu ul li i {
+    cursor: pointer;
+
+}
+
+.nav-menu ul li i:hover {
+    color: var(--nav-hover-color);
+
+}
+
+.change-header {
+    background: #4CAF50;
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 110px;
+    transform: translate(0, -40px);
+}
+
+#title {
+    color: var(--text-color);
+    font-family: "Poppins";
+    font-size: var(--larger-font);
+    font-weight: 600;
+    position: relative;
+}
+
+#title span {
+    color: var(--secondary-color);
+}
+
+.home p {
+    font-family: "Poppins";
+    font-size: var(--text-large-font);
+    color: var(--text-color);
+    margin: 0.2em;
+    position: relative;
+}
+
+/* Home Section */
+
+
+
+
+/* Leagues Section */
+
+.leagues {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.leagues h2 {
+    color: var(--text-color);
+    font-family: "Poppins";
+    font-size: var(--larger-font);
+    font-weight: 600;
+    position: relative;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    max-lines: 3;
+    font-family: "Poppins";
+}
+
+.card {
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    color: #fff;
+    box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    position: relative;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    transition: opacity 0.2s ease-out;
+}
+
+.prem img {
+    object-fit: cover;
+}
+
+.deutsche img {
+    object-fit: cover;
+}
+
+.card h2 {
+    position: absolute;
+    inset: auto auto 30px 30px;
+    margin: 0;
+    transition: inset 0.3s 0.3s ease-out;
+    font-family: "Poppins";
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.card p,
+.card a {
+    position: absolute;
+    opacity: 0;
+    max-width: 80%;
+    transition: opacity 0.3s ease-out;
+}
+
+.card p {
+    inset: auto auto 80px 30px;
+    z-index: 2;
+}
+
+.card a {
+    inset: auto auto 40px 30px;
+    color: inherit;
+    text-decoration: none;
+    z-index: 2;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    scale: 1.2;
+    box-shadow: 2px 7px 10px 5px rgba(0, 0, 0, 0.35);
+    transition: scale 0.7s;
+}
+
+.card:hover h2 {
+    inset: auto auto 220px 30px;
+    transition: inset 0.3s ease-out;
+}
+
+.card:hover p,
+.card:hover a {
+    opacity: 1;
+    transition: opacity 0.5s 0.1s ease-in;
+}
+
+.card:hover a {
+    color: var(--secondary-color);
+}
+
+.card:hover img {
+    transition: opacity 0.5s ease-in;
+    opacity: 1;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 1;
+    transition: background-color 0.5s;
+}
+
+.card:hover::before {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.material-symbols-outlined {
+    vertical-align: middle;
+}
+
+/* Leagues Section */
+
+#teamheader {
+    color: var(--text-color);
+    font-family: "Poppins";
+    font-size: var(--larger-font);
+    font-weight: 600;
+    position: relative;
+    margin-top: 100px;
+    text-align: center;
+}
+
+/* Teams Section */
+
+.teams {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    margin-top: 30px;
+    padding-bottom: 100px;
+}
+
+.teamcontent {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    margin-top: 130px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+
+.teamcontent h2 {
+    color: var(--text-color);
+    font-family: "Poppins";
+    font-size: var(--text-large-font);
+    font-weight: 600;
+    margin-bottom: 20px;
+
+}
+
+.teamcontent p {
+    color: var(--text-color);
+    font-family: "Poppins";
+    font-size: var(--text-font);
+    margin-right: 30px;
+}
+
+.explrbutton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: var(--text-font);
+    font-family: "Poppins";
+    font-weight: 600;
+    width: 200px;
+    height: 50px;
+    color: #fff;
+    background-color: var(--secondary-color);
+    border-style: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.explrbutton:hover {
+    background-color: #ebe7e7;
+    color: var(--secondary-color);
+}
+
+.swiper-container {
+    align-content: left;
+    margin-left: 60px;
+}
+
+.swiper {
+    width: 630px;
+    height: 400px;
+    margin-top: 50px;
+}
+
+.swiper .swiper-slide {
+    position: relative;
+
+}
+
+.swiper-slide .info {
+    color: #fff;
+    position: relative;
+    text-align: left;
+    margin-left: 10px;
+    transform: translateY(220px);
+    z-index: 100;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+    background: var(--secondary-color);
+    opacity: 1;
+}
+
+.imgcont {
+    width: 100%;
+    position: relative;
+    padding-top: 56.25%;
+}
+
+.imgcont img {
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+
+/* Teams Section */
+
+
+
+
+/* FullDB Section */
+
+.navcontainer {
+    width: 100%;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.dblist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dblist a {
+    text-decoration: underline;
+    font-size: var(--text-font);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.dblist ul {
+    list-style: none;
+}
+
+.dblist a:hover {
+    color: var(--secondary-color);
+    transition: 0.3s;
+}
+
+.dblist h1 {
+    margin-bottom: 20px;
+    font-family: 'Poppins';
+    font-size: var(--large-font);
+}
+
+.dblist form {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+    padding: 40px;
+    font-family: "Poppins";
+    font-size: var(--text-font);
+    font-weight: 400;
+}
+
+.dblist label {
+    margin-bottom: 5px;
+    margin: 5px;
+}
+
+.dblist select {
+    cursor: pointer;
+    padding: 8px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.datefilter {
+    margin: 20px;
+    display: block;
+    text-align: center;
+
+}
+
+.datefilter input {
+    cursor: pointer;
+    padding: 8px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.filterbuttons {
+    display: block;
+    text-align: center;
+
+}
+
+
+.filterbuttons button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: var(--text-font);
+    font-family: "Poppins";
+    font-weight: 600;
+    color: var(--secondary-color);
+    background-color: var(--bg-color);
+    border-style: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.dblist button:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.appliedfilters {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins';
+    font-size: var(--text-font);
+}
+
+.matchtable {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.matchtable table {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.matchtable th,
+.matchtable td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: solid;
+    border-color: #ccc;
+    border-width: 1px;
+}
+
+.matchtable th {
+    background-color: var(--secondary-color);
+    color: #000;
+    font-weight: 600;
+}
+
+.matchtable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.matchtable tr:hover {
+    background-color: #f0f0f0;
+}
+
+.matchtable td a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.matchtable td a:hover {
+    color: var(--secondary-color);
+}
+
+
+.pages {
+    text-align: center;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.pagination-page-info {
+    padding: .6em;
+    width: 100%;
+    margin: .5em;
+    font-size: 12px;
+}
+
+.pagination-page-info b {
+    color: black;
+    background: var(--secondary-color);
+    padding-left: 2px;
+    padding: .1em .25em;
+    font-size: 150%;
+    margin-right: 10px;
+}
+
+.pages ul li a {
+    display: inline-block;
+    font-size: var(--text-font);
+    padding: 8px 12px;
+    margin: 0 4px;
+    text-decoration: none;
+    color: var(--text-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pages ul li a:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+#perpageselect {
+    outline: none;
+    border-radius: 5px;
+}
+
+section {
+    min-height: 10vh;
+}
+
+/* FullDB Section */
+
+
+/* Matchtemp Section */
+
+.matchstats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.matchstats p {
+    margin-top: 10px;
+}
+
+.matchstats img {
+    margin-left: 30px;
+    margin-right: 30px;
+    transform: translateY(20px);
+    cursor: pointer;
+
+}
+
+.matchstats a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.matchstats a:hover {
+    color: var(--secondary-color);
+}
+
+/* Matchtemp Section */
+
+
+/* Leagues Website Section */
+
+.league-home {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.league-content {
+    text-align: left;
+    margin-left: 60px;
+    margin-top: 40px;
+}
+
+.league-logo-prem img {
+    width: 430px;
+    height: 430px;
+    transform: translate(0, -10%);
+}
+
+
+.league-logo-bundesliga img {
+    width: 350px;
+    height: 350px;
+    margin: 40px;
+}
+
+.league-logo-seriea img {
+    width: 640px;
+    height: 360px;
+}
+
+.league-logo-laliga img {
+    width: 432px;
+    height: 360px;
+}
+
+
+.league-title {
+    font-family: "Poppins";
+    font-size: var(--larger-font);
+    font-weight: 600;
+    position: relative;
+    color: var(--text-color);
+}
+
+#premtitle span {
+    color: #3D195B;
+}
+
+#bundtitle span {
+    color: #D10214;
+}
+
+#serietitle span {
+    color: #1E71B8;
+}
+
+#laligatitle span:nth-child(10n + 1) {
+    color: #ee0c1a;
+}
+
+#laligatitle span:nth-child(10n + 2) {
+    color: #ee8707;
+}
+
+#laligatitle span:nth-child(10n + 3) {
+    color: #fbec21;
+}
+
+#laligatitle span:nth-child(10n + 4) {
+    color: #119541;
+}
+
+#laligatitle span:nth-child(10n + 5) {
+    color: #1b8dcc;
+}
+
+#laligatitle span:nth-child(10n + 6) {
+    color: #921e7f;
+}
+
+.league-home p {
+    font-family: "Poppins";
+    font-size: var(--text-large-font);
+    color: var(--text-color);
+    margin: 0.2em;
+    position: relative;
+}
+
+.stats {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+}
+
+.stats h2 {
+    color: var(--text-color);
+    font-family: "Poppins";
+    font-size: var(--larger-font);
+    font-weight: 600;
+    position: relative;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.statstable {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 10px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.statstable h1 {
+    padding: 5px;
+    font-family: "Poppins";
+    font-size: var(--text-large-font);
+}
+
+.statstable table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.statstable th,
+.statstable td {
+    padding: 10px;
+    font-size: var(--text-font);
+    text-align: left;
+    border-bottom: solid;
+    border-color: #ccc;
+    border-width: 1px;
+}
+
+
+.statstable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.statstable tr:nth-child(odd) {
+    background-color: #ffff;
+}
+
+.statstable tr:hover {
+    background-color: #f0f0f0;
+}
+
+.statstable td a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.statstable td a:hover {
+    color: var(--secondary-color);
+}
+
+.stats-swiper {
+    width: 630px;
+    height: 1050px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.stats-swiper .swiper-button-next {
+    left: 700px;
+    color: var(--secondary-color);
+}
+
+.stats-swiper .swiper-button-prev {
+    transform: translateX(-100px);
+    color: var(--secondary-color);
+}
+
+
+
+
+
+/* League Website Section */
+
+
+/* 404 Error Page Section */
+
+.errormsg{
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    font-family: "Poppins";
+    transform: translateY(-20px);
+}
+
+.errormsg h1{
+    font-size: 150px;
+    color: var(--secondary-color);
+}
+
+.errormsg h3{
+    font-size: 40px;
+    border-bottom: 10px;
+}
+
+.errormsg button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: var(--text-font);
+    font-family: "Poppins";
+    font-weight: 600;
+    color: var(--bg-color);
+    background-color: var(--secondary-color);
+    border-style: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.errormsg button:hover {
+    background-color: var(--bg-color);
+    color: var(--secondary-color);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+/* 404 Error Page Section */
+
+
+/* Animation Section */
+
+[data-inViewport='slideTop'] {
+    transition: 1.5s cubic-bezier(0.4, 1, 0.22, 1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4em);
+    transition-delay: 0.2s;
+}
+
+[data-inViewport='slideTop'].is-inViewport {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0em);
+}
+
+[data-inViewport='slideLeft'] {
+    transition: 1.5s cubic-bezier(0.4, 1, 0.22, 1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-4em);
+    transition-delay: 0.2s;
+}
+
+[data-inViewport='slideLeft'].is-inViewport {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0em);
+}
+
+[data-inViewport='slideRight'] {
+    transition: 1.5s cubic-bezier(0.4, 1, 0.22, 1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(4em);
+    transition-delay: 0.2s;
+}
+
+[data-inViewport='slideRight'].is-inViewport {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0em);
+}
+
+/* Animation Section */

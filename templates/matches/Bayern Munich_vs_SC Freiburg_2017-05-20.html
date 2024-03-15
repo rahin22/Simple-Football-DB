@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>Bayern Munich vs SC Freiburg 2017-05-20</title>
+</head>
+
+
+<body>
+    <div class="navcontainer">
+        <nav>
+            <div class="nav-logo" onclick="homeRedir()">
+                <i class="ri-football-fill"></i>
+                <h2 id="Football Stats">FootballDB</h2>
+            </div>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li>
+                        <a href="/#home">Home</a>
+                    </li>
+                    <li>
+                        <a href="/#leagues">Leagues</a>
+                    </li>
+                    <li>
+                        <a href="/#teamheader">Teams</a>
+                    </li>
+                    <li>
+                        <a href="/fulldb">Match DB(A-Z)</a>
+                    </li>
+                    <li id="search-container">
+                        <form id="search-form" action="/fulldb" method="GET">
+                            <i class="ri-search-2-line" onmouseover="showSearch()"></i>
+                            <input id="searchbar" type="text" name="query" placeholder="Search.." onmouseleave="hideSearch()" onkeydown="searchOnEnter(event)">
+                        </form>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="matchstats">
+        <h1><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/1200px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png" width="70" height="70">Bayern Munich vs SC Freiburg<img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6d/SC_Freiburg_logo.svg/1200px-SC_Freiburg_logo.svg.png" width="70" height="70"></h1>
+        <h1>4 - 1</h1>
+        <p>Date: 2017-05-20</p>
+        <p>Division: <a href="/DeutscheBundesliga">Deutsche Bundesliga</a></p>
+        <p>Home Team: <a href="/fulldb?team=Bayern Munich">Bayern Munich</a></p>
+        <p>Away Team: <a href="/fulldb?team=SC Freiburg">SC Freiburg</a></p>
+    </div>
+
+    <script src="/static/main.js"></script>
+</body>
+
+</html>

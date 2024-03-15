@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>Bundesliga</title>
+</head>
+
+
+<body>
+    <div id="scrollTop" onclick='scrollToTop()'>
+        <i class="ri-arrow-up-line"></i>
+    </div>
+
+    <div class="navcontainer">
+        <nav>
+            <div class="nav-logo" onclick="homeRedir()">
+                <i class="ri-football-fill"></i>
+                <h2 id="Football Stats">FootballDB</h2>
+            </div>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li>
+                        <a href="/#home">Home</a>
+                    </li>
+                    <li>
+                        <a href="/#leagues">Leagues</a>
+                    </li>
+                    <li>
+                        <a href="/#teamheader">Teams</a>
+                    </li>
+                    <li>
+                        <a href="/fulldb">Match DB(A-Z)</a>
+                    </li>
+                    <li id="search-container">
+                        <form id="search-form" action="/fulldb" method="GET">
+                            <i class="ri-search-2-line" onmouseover="showSearch()"></i>
+                            <input id="searchbar" type="text" name="query" placeholder="Search.."
+                                onmouseleave="hideSearch()" onkeydown="searchOnEnter(event)">
+                        </form>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="league-home bundesliga">
+        <div class="league-content">
+            <h2  class="league-title" id="bundtitle">Bundes<span>liga</span></h2>
+            <p>Dive into the Bundesliga, home to Bayern Munich, Borussia Dortmund, and RB Leipzig. Witness football's finest clash in Germany's premier league, where tradition meets talent on the pitch. Find all the standings from past seasons and all match data from your favourite teams.</p>
+        </div>
+        <div class="league-logo-bundesliga" data-inViewport='slideRight'>
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/df/Bundesliga_logo_%282017%29.svg/1200px-Bundesliga_logo_%282017%29.svg.png">
+        </div>
+    </div>
+
+    <div class="stats">
+        <h2>League Stats</h2>
+
+
+
+        <div class="swiper-stats-container">
+            <div class="stats-swiper " data-inviewport="slideTop">
+                <div class="swiper-wrapper">
+
+
+                    <div class="swiper-slide">
+                        <div class="statstable" data-inviewport="slideTop">
+                            <h1>2013/14 Standings</h1>
+                            <table>
+                                <tr>
+                                    <th>Pos</th>
+                                    <th>Team</th>
+                                    <th>GP</th>
+                                    <th>W</th>
+                                    <th>L</th>
+                                    <th>D</th>
+                                    <th>Pts</th>
+                                </tr>
+                
+                                {%for stats in bl2013%}
+                                <tr data-inviewport="slideTop">
+                                    <td data-inviewport="slideTop">{{stats.Pos}}</td>
+                                    <td data-inviewport="slideTop"><img src="{{stats.Logo}}" width="20" height="20" style="transform: translateY(5px);"> <a href="{{stats.Url}}">{{stats.Team}}</a></td>
+                                    <td data-inviewport="slideTop">{{stats.Played}}</td>
+                                    <td data-inviewport="slideTop">{{stats.Won}}</td>
+                                    <td data-inviewport="slideTop">{{stats.Lost}}</td>
+                                    <td data-inviewport="slideTop">{{stats.Drawn}}</td>
+                                    <td data-inviewport="slideTop">{{stats.Points}}</td>
+                                </tr>
+                                {%endfor%}
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <div class="swiper-slide">
+                        <div class="statstable" data-inviewport="slideTop">
+                            <h1>2014/15 Standings</h1>
+                            <table>
+                                <tr>
+                                    <th>Pos</th>
+                                    <th>Team</th>
+                                    <th>GP</th>
+                                    <th>W</th>
+                                    <th>L</th>
+                                    <th>D</th>
+                                    <th>Pts</th>
+                                </tr>
+                
+                                {%for stats in bl2014%}
+                                <tr data-inviewport="slideTop">
+                                    <td data-inviewport="slideTop">{{stats.Pos}}</td>
+                                    <td data-inviewport="slideTop"><img src="{{stats.Logo}}" width="20" height="20" style="transform: translateY(5px);"> <a href="{{stats.Url}}">{{stats.Team}}</a></td>
+                                    <td data-inviewport="slideTop">{{stats.Played}}</td>
+                                    <td data-inviewport="slideTop">{{stats.Won}}</td>
+                                    <td data-inviewport="slideTop">{{stats.Lost}}</td>
+                                    <td data-inviewport="slideTop">{{stats.Drawn}}</td>
+                                    <td data-inviewport="slideTop">{{stats.Points}}</td>
+                                </tr>
+                                {%endfor%}
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <div class="swiper-slide">
+                        <div class="statstable" data-inviewport="slideTop">
+                            <h1>2015/16 Standings</h1>
+                            <table>
+                                <tr>
+                                    <th>Pos</th>
+                                    <th>Team</th>
+                                    <th>GP</th>
+                                    <th>W</th>
+                                    <th>L</th>
+                                    <th>D</th>
+                                    <th>Pts</th>
+                                </tr>
+                
+                                {%for stats in bl2015%}
+                                <tr data-inviewport="slideTop">
+                                    <td data-inviewport="slideTop">{{stats.Pos}}</td>
+                                    <td data-inviewport="slideTop"><img src="{{stats.Logo}}" width="20" height="20" style="transform: translateY(5px);"> <a href="{{stats.Url}}">{{stats.Team}}</a></td>
+                                    <td data-inviewport="slideTop">{{stats.Played}}</td>
+                                    <td data-inviewport="slideTop">{{stats.Won}}</td>
+                                    <td data-inviewport="slideTop">{{stats.Lost}}</td>
+                                    <td data-inviewport="slideTop">{{stats.Drawn}}</td>
+                                    <td data-inviewport="slideTop">{{stats.Points}}</td>
+                                </tr>
+                                {%endfor%}
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <div class="swiper-slide">
+                        <div class="statstable" data-inviewport="slideTop">
+                            <h1>2016/17 Standings</h1>
+                            <table>
+                                <tr>
+                                    <th>Pos</th>
+                                    <th>Team</th>
+                                    <th>GP</th>
+                                    <th>W</th>
+                                    <th>L</th>
+                                    <th>D</th>
+                                    <th>Pts</th>
+                                </tr>
+                
+                                {%for stats in bl2016%}
+                                <tr data-inviewport="slideTop">
+                                    <td data-inviewport="slideTop">{{stats.Pos}}</td>
+                                    <td data-inviewport="slideTop"><img src="{{stats.Logo}}" width="20" height="20" style="transform: translateY(5px);"> <a href="{{stats.Url}}">{{stats.Team}}</a></td>
+                                    <td data-inviewport="slideTop">{{stats.Played}}</td>
+                                    <td data-inviewport="slideTop">{{stats.Won}}</td>
+                                    <td data-inviewport="slideTop">{{stats.Lost}}</td>
+                                    <td data-inviewport="slideTop">{{stats.Drawn}}</td>
+                                    <td data-inviewport="slideTop">{{stats.Points}}</td>
+                                </tr>
+                                {%endfor%}
+                            </table>
+                        </div>
+                    </div>
+                    
+                    
+
+
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+
+</html>
