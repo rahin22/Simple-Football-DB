@@ -1,0 +1,21 @@
+Pos,Logo,Team,Played,Won,Drawn,Lost,GF,GA,GD,Points
+1,https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/1200px-Chelsea_FC.svg.png,Chelsea,38,30,3,5,85,33,+52,93
+2,https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Tottenham_Hotspur.svg/1200px-Tottenham_Hotspur.svg.png,Tottenham Hotspur,38,26,8,4,86,26,+60,86
+3,https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/1200px-Manchester_City_FC_badge.svg.png,Manchester City,38,23,9,6,80,39,+41,78
+4,https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/1200px-Liverpool_FC.svg.pngg,Liverpool,38,22,10,6,78,42,+36,76
+5,https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Arsenal_FC.svg/1200px-Arsenal_FC.svg.png,Arsenal,38,23,6,9,77,44,+33,75
+6,https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/1200px-Manchester_United_FC_crest.svg.png,Manchester United,38,18,15,5,54,29,+25,69
+7,https://upload.wikimedia.org/wikipedia/en/thumb/7/7c/Everton_FC_logo.svg/1200px-Everton_FC_logo.svg.png,Everton,38,17,10,11,62,44,+18,61
+8,https://upload.wikimedia.org/wikipedia/en/thumb/c/c9/FC_Southampton.svg/1200px-FC_Southampton.svg.png,Southampton,38,12,10,16,41,48,-7,46
+9,https://upload.wikimedia.org/wikipedia/en/thumb/e/e5/AFC_Bournemouth_%282013%29.svg/1200px-AFC_Bournemouth_%282013%29.svg.png,Bournemouth,38,12,10,16,55,67,-12,46
+10,https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/West_Bromwich_Albion.svg/1200px-West_Bromwich_Albion.svg.png,West Bromwich Albion,38,12,9,17,43,51,-8,45
+11,https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/West_Ham_United_FC_logo.svg/1200px-West_Ham_United_FC_logo.svg.png,West Ham United,38,12,9,17,47,64,-17,45
+12,https://upload.wikimedia.org/wikipedia/en/thumb/2/2d/Leicester_City_crest.svg/1200px-Leicester_City_crest.svg.png?20180205224538,Leicester City,38,12,8,18,48,63,-15,44
+13,https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Stoke_City_FC.svg/1200px-Stoke_City_FC.svg.png,Stoke City,38,11,11,16,41,56,-15,44
+14,https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/Crystal_Palace_FC_logo_%282022%29.svg/1200px-Crystal_Palace_FC_logo_%282022%29.svg.png,Crystal Palace,38,12,5,21,50,63,-13,41
+15,https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Swansea_City_AFC_logo.svg/1200px-Swansea_City_AFC_logo.svg.png,Swansea ,38,12,5,21,45,70,-25,41
+16,https://upload.wikimedia.org/wikipedia/en/thumb/6/6d/Burnley_FC_Logo.svg/1200px-Burnley_FC_Logo.svg.png,Burnley,38,11,7,20,39,55,-16,40
+17,https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/Watford.svg/1200px-Watford.svg.png,Watford,38,11,7,20,40,68,-28,40
+18,https://upload.wikimedia.org/wikipedia/en/thumb/5/54/Hull_City_A.F.C._logo.svg/1200px-Hull_City_A.F.C._logo.svg.png,Hull City,38,9,7,22,37,80,-43,34
+19,https://en.wikipedia.org/wiki/Middlesbrough_F.C.,Middlesbrough,38,5,13,20,27,53,-26,28
+20,https://upload.wikimedia.org/wikipedia/en/thumb/7/77/Logo_Sunderland.svg/1200px-Logo_Sunderland.svg.png,Sunderland,38,6,6,26,29,69,-40,24
